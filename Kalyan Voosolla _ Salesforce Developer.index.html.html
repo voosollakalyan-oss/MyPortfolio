@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kalyan Voosolla | Salesforce Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f8fd;--surface:#fff;--ink:#0d1b3d;--mute:#51607f;--line:#d5e2f2;--blue:#0b7fe0;--sky:#cfe6fb;--coral:#ff6b4a;
+--d:'Plus Jakarta Sans','Segoe UI',sans-serif;--b:'DM Sans','Segoe UI',sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1730;--surface:#112345;--ink:#eaf2ff;--mute:#9fb2d6;--line:#233a68;--blue:#4aa8ff;--sky:#173561;--coral:#ff8265}}
+:root[data-theme="dark"]{--bg:#0a1730;--surface:#112345;--ink:#eaf2ff;--mute:#9fb2d6;--line:#233a68;--blue:#4aa8ff;--sky:#173561;--coral:#ff8265}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--b);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font:800 20px var(--d)}
+nav ul{display:flex;gap:22px;list-style:none;padding:0;font-size:15px;font-weight:500}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--blue)}
+.hero{padding:72px 0 40px;display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:center}
+h1{font:800 clamp(48px,8vw,104px)/.92 var(--d);letter-spacing:-.035em}
+.role{font:600 22px var(--d);color:var(--blue);margin:22px 0 14px}
+.lede{color:var(--mute);max-width:46ch}
+.cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{padding:13px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.p{background:var(--ink);color:var(--bg)}
+.btn:hover{background:var(--coral);border-color:var(--coral);color:#fff}
+.org{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:10px}
+.org svg{width:100%;height:auto;display:block}
+.org text{font:600 13px var(--b);fill:var(--ink)}
+.org .sub{font-weight:400;font-size:11px;fill:var(--mute)}
+.edge{stroke:var(--blue);stroke-width:2;fill:none;stroke-dasharray:5 7;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-24}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);border-bottom:1px solid var(--line);margin:40px 0 0}
+.stats div{padding:24px 16px 24px 0}
+.stats strong{display:block;font:800 52px/1 var(--d);color:var(--blue)}
+.stats span{color:var(--mute);font-size:15px}
+section{padding:88px 0 0}
+h2{font:800 clamp(32px,4.5vw,52px)/1.05 var(--d);letter-spacing:-.025em;margin-bottom:12px}
+.intro{color:var(--mute);max-width:60ch;margin-bottom:36px}
+.proj{display:grid;gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:32px;display:grid;grid-template-columns:240px 1fr;gap:28px}
+.card:nth-child(2){border-radius:24px 80px 24px 24px}
+.card h3{font:800 28px/1.1 var(--d)}
+.card .tag{color:var(--blue);font-weight:600;margin-top:8px;font-size:15px}
+.card ul{padding-left:20px;color:var(--mute)}
+.card li{margin-bottom:8px}
+.card li::marker{color:var(--coral)}
+.card li.hl{list-style:none;margin:0 0 14px -20px;padding:14px 16px;background:var(--sky);border-left:4px solid var(--coral);border-radius:12px;color:var(--ink)}
+.card li.hl b{color:var(--blue)}
+.card:nth-child(4){border-radius:80px 24px 24px 24px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.skills h3{font:600 20px var(--d);padding-bottom:10px;border-bottom:2px solid var(--blue);margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--sky);padding:5px 13px;border-radius:999px;font-size:14px;font-weight:500}
+.tl{border-left:3px solid var(--blue);margin-left:6px;padding-left:28px;display:grid;gap:30px}
+.tl div{position:relative}
+.tl div::before{content:"";position:absolute;left:-38px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:3px solid var(--coral)}
+.tl h3{font:600 22px var(--d)}
+.tl p{color:var(--mute);font-size:15px}
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;font-weight:600;display:flex;gap:14px;align-items:center}
+.cert i{flex:none;width:42px;height:48px;background:var(--blue);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.contact{margin-top:88px;background:var(--ink);color:var(--bg);border-radius:36px 36px 0 0;padding:64px 0 48px}
+.contact h2{color:var(--bg)}
+.contact .links{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+.contact a{padding:13px 24px;border:2px solid var(--bg);border-radius:999px;text-decoration:none;font-weight:600}
+.contact a:hover{background:var(--coral);border-color:var(--coral);color:#fff}
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--blue),var(--coral));z-index:9}
+.blobs{position:absolute;inset:0 0 auto 0;height:900px;overflow:hidden;z-index:-1;pointer-events:none}
+.blobs i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 18s ease-in-out infinite alternate}
+.blobs i:nth-child(1){width:460px;height:460px;background:var(--sky);left:-120px;top:40px}
+.blobs i:nth-child(2){width:380px;height:380px;background:var(--blue);opacity:.22;right:-80px;top:120px;animation-delay:-6s}
+.blobs i:nth-child(3){width:300px;height:300px;background:var(--coral);opacity:.18;left:42%;top:420px;animation-delay:-11s}
+@keyframes drift{to{transform:translate(70px,50px) scale(1.18)}}
+.cloud{position:absolute;width:150px;height:50px;border-radius:50px;background:var(--surface);opacity:.8;animation:sail 38s linear infinite}
+.cloud::before{content:"";position:absolute;width:70px;height:70px;border-radius:50%;background:inherit;left:24px;top:-34px}
+.cloud:nth-child(4){top:90px;left:-200px}
+.cloud:nth-child(5){top:300px;left:-200px;transform:scale(.7);animation-duration:55s;animation-delay:-20s}
+@keyframes sail{to{transform:translateX(calc(100vw + 400px))}}
+.caret{display:inline-block;width:3px;height:1em;background:var(--coral);margin-left:4px;vertical-align:-3px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.orbit{transform-origin:220px 200px;animation:spin 24s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.org{position:relative;box-shadow:0 30px 70px -30px rgba(11,127,224,.45);animation:bob 6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px)}}
+.mq{overflow:hidden;margin:56px -24px 0;background:var(--ink);padding:16px 0;transform:rotate(-1.2deg)}
+.mq div{display:flex;gap:44px;width:max-content;animation:roll 32s linear infinite;color:var(--bg);font:600 20px var(--d);white-space:nowrap}
+.mq span::after{content:"\2726";color:var(--coral);margin-left:44px}
+@keyframes roll{to{transform:translateX(-50%)}}
+.js .rv{opacity:0;transform:translateY(34px) scale(.98);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.card{position:relative;overflow:hidden;transition:box-shadow .3s,border-color .3s}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--blue) 16%,transparent),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{border-color:var(--blue);box-shadow:0 24px 50px -28px var(--blue)}
+.card:hover::after{opacity:1}
+.card h3::before{content:"";display:block;width:46px;height:46px;margin-bottom:14px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--coral));clip-path:path("M23 0C33 0 38 8 38 14c5 1 8 5 8 10 0 6-5 10-10 10H12C5 34 0 29 0 23c0-5 4-9 9-10C10 6 15 0 23 0Z");animation:wob 5s ease-in-out infinite}
+@keyframes wob{50%{transform:translateY(-6px) rotate(-4deg)}}
+.chips span{transition:transform .25s,background .25s,color .25s}
+.chips span:hover{transform:translateY(-4px) scale(1.07);background:var(--blue);color:#fff}
+.tl{position:relative;border-left:0}
+.tl::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--blue),var(--coral));transform-origin:top;transform:scaleY(0);transition:transform 1.6s ease}
+.tl.in::before{transform:scaleY(1)}
+.tl div::before{animation:ping 2.4s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--coral) 60%,transparent)}100%{box-shadow:0 0 0 14px transparent}}
+.cert{position:relative;overflow:hidden;transition:transform .3s}
+.cert:hover{transform:translateY(-6px) rotate(-1deg)}
+.cert i{animation:wob 4s ease-in-out infinite}
+.cert::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .7s}
+.cert:hover::after{left:140%}
+.btn{transition:transform .25s,background .25s}.btn:hover{transform:translateY(-3px)}
+.contact{position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;width:520px;height:520px;right:-120px;top:-200px;border-radius:50%;background:radial-gradient(circle,var(--blue),transparent 65%);opacity:.5;animation:drift 12s ease-in-out infinite alternate}
+.contact .wrap{position:relative}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.tl::before{transform:none}}
+body{font-size:17px;line-height:1.65;letter-spacing:-.003em}
+h1{font-weight:800;letter-spacing:-.045em;line-height:.95;background:linear-gradient(100deg,var(--ink) 20%,var(--blue) 55%,var(--ink) 90%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 8s ease-in-out infinite alternate}
+@keyframes sheen{to{background-position:100% 0}}
+h2{font-weight:800;letter-spacing:-.035em}
+h2::after{content:"";display:block;width:64px;height:5px;border-radius:5px;margin-top:14px;background:linear-gradient(90deg,var(--blue),var(--coral))}
+.intro{font-size:18px;margin-top:18px}
+.blobs{background-image:radial-gradient(var(--line) 1.4px,transparent 1.4px);background-size:28px 28px;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+nav ul li:last-child a{background:var(--ink);color:var(--bg);padding:9px 20px;border-radius:999px}
+nav ul li:last-child a:hover{background:var(--coral);color:#fff}
+.card{border-left:5px solid var(--blue)}
+.card .chips{margin-top:14px}.card .chips span{font-size:12.5px;padding:3px 10px}
+.card ul{font-size:16.5px}
+.cap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cap div{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px;transition:transform .3s,box-shadow .3s}
+.cap div:hover{transform:translateY(-8px);box-shadow:0 24px 40px -26px var(--blue)}
+.cap svg{width:54px;height:54px;padding:12px;border-radius:16px;background:linear-gradient(135deg,var(--blue),#5dc1ff);stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px;transition:transform .5s}
+.cap div:hover svg{transform:rotate(-10deg) scale(1.1)}
+.cap h3{font:700 20px var(--d);margin-bottom:6px}
+.cap p{color:var(--mute);font-size:15.5px}
+.pipe{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:18px;overflow-x:auto}
+.pipe svg{min-width:760px;width:100%;display:block}
+.pipe text{font:700 14px var(--d);fill:var(--ink)}.pipe .s{font:500 12px var(--b);fill:var(--mute)}
+.pipe .ln{stroke:var(--blue);stroke-width:3;stroke-dasharray:6 8;animation:flow 1.2s linear infinite}
+.hexes{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.hex{text-align:center;font:600 14.5px/1.3 var(--d)}
+.hex svg{width:100%;max-width:120px;display:block;margin:0 auto 10px;filter:drop-shadow(0 14px 14px rgba(11,127,224,.3));transition:transform .4s}
+.hex:hover svg{transform:translateY(-8px) rotate(6deg) scale(1.06)}
+.hex text{font:800 22px var(--d);fill:#fff;text-anchor:middle}
+@media(max-width:860px){.cap{grid-template-columns:1fr}.hexes{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:860px){.hero,.card{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.skills,.certs{grid-template-columns:1fr}nav ul{display:none}}
+@media(prefers-reduced-motion:reduce){.edge{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div class="blobs" aria-hidden="true"><i></i><i></i><i></i><span class="cloud"></span><span class="cloud"></span></div>
+<nav><div class="wrap"><b>KV</b><ul><li><a href="#work">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#path">Experience</a></li><li><a href="#certs">Certifications</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+<main class="wrap">
+<header class="hero">
+<div>
+<h1>Kalyan Voosolla</h1>
+<p class="role"><span id="typed">Senior Salesforce Developer</span><i class="caret"></i></p>
+<p class="lede">Five years building Sales Cloud and Service Cloud solutions that sales teams actually use: Apex, Lightning Web Components, Flows, and integrations that keep data moving.</p>
+<div class="cta"><a class="btn p" href="#work">See my projects</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+<div class="org" aria-label="Diagram of a Salesforce data model connected to external systems">
+<svg viewBox="0 0 440 400" role="img">
+<path class="edge" d="M110 90 L220 200"/><path class="edge" d="M330 90 L220 200"/><path class="edge" d="M220 200 L110 310"/><path class="edge" d="M220 200 L330 310"/>
+<g><circle cx="220" cy="200" r="52" fill="var(--blue)"/><text x="220" y="198" text-anchor="middle" style="fill:#fff;font-size:16px;font-weight:800">Account</text><text x="220" y="216" text-anchor="middle" style="fill:#fff" class="sub">200+ users</text></g>
+<g><rect x="48" y="62" width="124" height="56" rx="16" fill="var(--sky)"/><text x="110" y="87" text-anchor="middle">Lead</text><text x="110" y="104" text-anchor="middle" class="sub">HubSpot sync</text></g>
+<g><rect x="268" y="62" width="124" height="56" rx="16" fill="var(--sky)"/><text x="330" y="87" text-anchor="middle">Opportunity</text><text x="330" y="104" text-anchor="middle" class="sub">Stage-gate logic</text></g>
+<g><rect x="48" y="282" width="124" height="56" rx="16" fill="var(--sky)"/><text x="110" y="307" text-anchor="middle">Case</text><text x="110" y="324" text-anchor="middle" class="sub">Slack alerts</text></g>
+<g><rect x="268" y="282" width="124" height="56" rx="16" fill="var(--coral)"/><text x="330" y="307" text-anchor="middle" style="fill:#fff">Contract</text><text x="330" y="324" text-anchor="middle" style="fill:#fff" class="sub">DocuSign, Batch Apex</text></g>
+<g class="orbit"><circle cx="220" cy="200" r="88" fill="none" stroke="var(--blue)" stroke-opacity=".35" stroke-dasharray="2 9" stroke-width="3" stroke-linecap="round"/><circle cx="308" cy="200" r="6" fill="var(--coral)"/><circle cx="132" cy="200" r="4" fill="var(--blue)"/></g>
+<circle r="5" fill="var(--coral)"><animateMotion dur="2.4s" repeatCount="indefinite" path="M110 90 L220 200"/></circle>
+<circle r="5" fill="var(--coral)"><animateMotion dur="2.8s" repeatCount="indefinite" path="M330 90 L220 200"/></circle>
+<circle r="5" fill="var(--blue)"><animateMotion dur="2.6s" repeatCount="indefinite" path="M220 200 L110 310"/></circle>
+<circle r="5" fill="var(--blue)"><animateMotion dur="3s" repeatCount="indefinite" path="M220 200 L330 310"/></circle>
+<circle cx="220" cy="200" r="52" fill="none" stroke="var(--blue)" stroke-width="2"><animate attributeName="r" values="52;84" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".6;0" dur="2.4s" repeatCount="indefinite"/></circle>
+</svg>
+</div>
+</header>
+<div class="stats">
+<div><strong>5</strong><span>years on the Salesforce platform</span></div>
+<div><strong>6</strong><span>Salesforce and Copado certifications</span></div>
+<div><strong>200+</strong><span>users administered in one org</span></div>
+<div><strong>4</strong><span>client projects: GovTech, real estate, insurance, retail</span></div>
+</div>
+<div class="mq" aria-hidden="true"><div><span>Apex</span><span>Lightning Web Components</span><span>Flow Builder</span><span>REST APIs</span><span>Copado</span><span>Azure DevOps</span><span>GitHub Actions</span><span>Sales Cloud</span><span>Service Cloud</span><span>Apex</span><span>Lightning Web Components</span><span>Flow Builder</span><span>REST APIs</span><span>Copado</span><span>Azure DevOps</span><span>GitHub Actions</span><span>Sales Cloud</span><span>Service Cloud</span></div></div>
+
+<section id="about">
+<h2>What I deliver</h2>
+<p class="intro">Full-lifecycle Salesforce work: analysis, design, build, test and release.</p>
+<div class="cap">
+<div><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><h3>Apex and LWC</h3><p>Triggers, Batch Apex, scheduled jobs and Lightning Web Components built for large data volumes.</p></div>
+<div><svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="5" cy="18" r="2"/><path d="M7 6h5a3 3 0 013 3v1M7 18h5a3 3 0 003-3v-1"/></svg><h3>Flows and automation</h3><p>Flow Builder, approvals and migrations from Workflow Rules and Process Builder.</p></div>
+<div><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3A4 4 0 0011 18.7l1-1"/></svg><h3>REST integrations</h3><p>Inbound and outbound APIs connecting Salesforce to HubSpot, Slack, DocuSign and more.</p></div>
+<div><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0114-5.3M20 12a8 8 0 01-14 5.3M18 3v4h-4M6 21v-4h4"/></svg><h3>CI/CD and DevOps</h3><p>Copado, Azure DevOps and GitHub Actions for repeatable, tested releases.</p></div>
+<div><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><h3>Security</h3><p>OAuth, SSO, roles, profiles and permission sets protecting data across the org.</p></div>
+<div><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg><h3>Reports and dashboards</h3><p>Contract lifecycle and pipeline analytics that support data-driven decisions.</p></div>
+</div>
+</section>
+
+<section id="work">
+<h2>Selected projects</h2>
+<p class="intro">Client work across sales operations, real estate and insurance, from data model to deployment.</p>
+<div class="proj">
+<article class="card"><div><h3>GovSpend</h3><p class="tag">Sales Cloud, integrations, automation</p></div>
+<ul><li class="hl"><b>Led the data migration from HubSpot to Salesforce,</b> moving contacts, companies and deals into the new org and mapping them to the redesigned data model.</li><li>Redesigned the sales process with stage-gate logic, validation rules and DLRS rollups for more accurate pipeline and forecasting.</li><li>Connected HubSpot to Salesforce through APIs for inbound lead capture and enrichment.</li><li>Built a custom Slack integration that pushes live case and activity updates.</li><li>Created an Account Plans framework for renewals, QBRs and revenue growth, and integrated DocuSign for contract execution.</li><li>Administered the org for 200+ users: roles, profiles, permission sets and access.</li></ul></article>
+<article class="card"><div><h3>Janapriya Upscale</h3><p class="tag">Sales and Service Cloud, LWC, Apex</p></div>
+<ul><li>Customized the full real estate sales lifecycle: leads, opportunities, unit bookings and customer service.</li><li>Automated unit locking, pricing calculations and stage transitions with Apex and Flows.</li><li>Built Lightning Web Components for unit selection, availability, floor plans and payment schedules.</li><li>Designed discount and deal-closure approvals, plus dashboards for sales and finance.</li><li>Synced lead and customer data in real time over REST APIs, and handled data migration with Data Loader.</li></ul></article>
+<article class="card"><div><h3>EnGauge (Homesteaders Life)</h3><p class="tag">Flows, APIs, automation</p></div>
+<ul><li>Implemented Lightning Flows for seller onboarding and trust verification.</li><li>Automated email reminders for incomplete due diligence and compliance documents.</li><li>Developed inbound and outbound REST APIs for lead ingestion and external platforms.</li><li>Made apps responsive on mobile and tablet, and ran SonarQube code quality analysis on deployments.</li></ul></article>
+<article class="card"><div><h3>Daniel PA (Walmart)</h3><p class="tag">Flows, APIs, automation</p></div>
+<ul><li>Implemented Lightning Flows for seller onboarding and trust verification workflows.</li><li>Automated email notifications for incomplete due diligence and compliance documentation.</li><li>Developed inbound and outbound REST APIs for account screening and external platform integration.</li><li>Enhanced existing functionality by modifying controllers, controller extensions and triggers across platforms, using Apex, Visualforce, Lightning Web Components, Aura Components, HTML, CSS and JavaScript for responsive, interactive interfaces.</li><li>Ensured mobile and tablet responsiveness, supported deployments, and fixed issues found in SonarQube code quality analysis.</li></ul></article>
+</div>
+</section>
+
+<section id="skills">
+<h2>What I work with</h2>
+<p class="intro">Declarative speed where it fits, code where it matters.</p>
+<div class="skills">
+<div><h3>Development</h3><div class="chips"><span>Apex</span><span>Triggers</span><span>Batch Apex</span><span>LWC</span><span>Visualforce</span><span>SOQL</span><span>SOSL</span><span>JavaScript</span><span>HTML / CSS</span></div></div>
+<div><h3>Platform and automation</h3><div class="chips"><span>Sales Cloud</span><span>Service Cloud</span><span>Flow Builder</span><span>Approval processes</span><span>Custom objects</span><span>Reports and dashboards</span><span>Role hierarchy</span><span>Mobile app</span></div></div>
+<div><h3>Integration and DevOps</h3><div class="chips"><span>REST API</span><span>OAuth</span><span>SSO</span><span>DocuSign</span><span>Zapier</span><span>DLRS</span><span>Copado</span><span>Azure DevOps</span><span>GitHub Actions</span><span>SonarQube</span><span>Data Loader</span><span>Workbench</span></div></div>
+</div>
+</section>
+
+<section id="ship">
+<h2>How I ship</h2>
+<p class="intro">A release path from local code to production, with quality checks on the way.</p>
+<div class="pipe"><svg viewBox="0 0 960 170" role="img" aria-label="Release pipeline from code to production">
+<line class="ln" x1="90" y1="70" x2="870" y2="70"/>
+<g><circle cx="90" cy="70" r="38" fill="var(--blue)"/><text x="90" y="75" text-anchor="middle" style="fill:#fff">Code</text><text x="90" y="140" text-anchor="middle">Build</text><text class="s" x="90" y="158" text-anchor="middle">VS Code, Apex, LWC</text></g>
+<g><circle cx="280" cy="70" r="38" fill="var(--blue)"/><text x="280" y="75" text-anchor="middle" style="fill:#fff">Push</text><text x="280" y="140" text-anchor="middle">Automate</text><text class="s" x="280" y="158" text-anchor="middle">GitHub Actions</text></g>
+<g><circle cx="480" cy="70" r="38" fill="var(--blue)"/><text x="480" y="75" text-anchor="middle" style="fill:#fff">Scan</text><text x="480" y="140" text-anchor="middle">Verify</text><text class="s" x="480" y="158" text-anchor="middle">SonarQube, tests</text></g>
+<g><circle cx="680" cy="70" r="38" fill="var(--blue)"/><text x="680" y="75" text-anchor="middle" style="fill:#fff">Ship</text><text x="680" y="140" text-anchor="middle">Release</text><text class="s" x="680" y="158" text-anchor="middle">Copado, Azure DevOps</text></g>
+<g><circle cx="870" cy="70" r="38" fill="var(--coral)"/><text x="870" y="75" text-anchor="middle" style="fill:#fff">Live</text><text x="870" y="140" text-anchor="middle">Production</text><text class="s" x="870" y="158" text-anchor="middle">Salesforce org</text></g>
+<circle r="7" fill="var(--coral)" cy="70"><animate attributeName="cx" values="90;870" dur="5s" repeatCount="indefinite"/></circle>
+</svg></div>
+</section>
+
+<section id="path">
+<h2>Experience</h2>
+<p class="intro">From intern to senior developer in four years.</p>
+<div class="tl">
+<div><h3>Senior Salesforce Developer</h3><p>Confidential · March 2026 to present</p></div>
+<div><h3>Salesforce Developer</h3><p>Catalyst Partners · May 2025 to March 2026</p></div>
+<div><h3>Salesforce Developer</h3><p>Sparkviz Technologies · June 2022 to May 2025</p></div>
+<div><h3>Salesforce Developer Intern</h3><p>Intech Software Solutions · November 2021 to May 2022</p></div>
+</div>
+</section>
+
+<section id="certs">
+<h2>Certifications</h2>
+<p class="intro">Verified on Trailhead, where I hold Ranger rank.</p>
+<div class="hexes">
+<div class="hex"><svg viewBox="0 0 100 112"><polygon points="50,2 96,28 96,84 50,110 4,84 4,28" fill="#0b7fe0"/><polygon points="50,10 89,32 89,80 50,102 11,80 11,32" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2"/><text x="50" y="64">PD1</text></svg>Platform Developer I</div>
+<div class="hex"><svg viewBox="0 0 100 112"><polygon points="50,2 96,28 96,84 50,110 4,84 4,28" fill="#5b3fd1"/><polygon points="50,10 89,32 89,80 50,102 11,80 11,32" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2"/><text x="50" y="64">ADM</text></svg>Administrator</div>
+<div class="hex"><svg viewBox="0 0 100 112"><polygon points="50,2 96,28 96,84 50,110 4,84 4,28" fill="#ff6b4a"/><polygon points="50,10 89,32 89,80 50,102 11,80 11,32" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2"/><text x="50" y="64">AI</text></svg>AI Associate</div>
+<div class="hex"><svg viewBox="0 0 100 112"><polygon points="50,2 96,28 96,84 50,110 4,84 4,28" fill="#0a9d8f"/><polygon points="50,10 89,32 89,80 50,102 11,80 11,32" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2"/><text x="50" y="64">ASC</text></svg>Salesforce Associate</div>
+<div class="hex"><svg viewBox="0 0 100 112"><polygon points="50,2 96,28 96,84 50,110 4,84 4,28" fill="#1b4fa8"/><polygon points="50,10 89,32 89,80 50,102 11,80 11,32" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2"/><text x="50" y="64">DC</text></svg>Data Cloud Consultant</div>
+<div class="hex"><svg viewBox="0 0 100 112"><polygon points="50,2 96,28 96,84 50,110 4,84 4,28" fill="#c2410c"/><polygon points="50,10 89,32 89,80 50,102 11,80 11,32" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2"/><text x="50" y="64">CP</text></svg>Copado Fundamentals I</div>
+</div>
+</section>
+</main>
+
+<footer class="contact" id="contact"><div class="wrap">
+<h2>Let's build something on Salesforce.</h2>
+<p style="max-width:50ch;opacity:.8">Open to conversations about Salesforce development, integrations and DevOps work.</p>
+<div class="links"><a href="mailto:kalyan.sfdev@gmail.com">kalyan.sfdev@gmail.com</a><a href="tel:+917989635498">+91 79896 35498</a><a href="https://www.linkedin.com/in/vkalyan/" target="_blank" rel="noopener">LinkedIn</a><a href="https://trailblazer.me/id/vkalyan35" target="_blank" rel="noopener">Trailhead</a></div>
+</div></footer>
+<script>
+(function(){
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.documentElement.classList.add('js');
+document.querySelectorAll('.card .tag').forEach(function(t){var c=document.createElement('div');c.className='chips';t.textContent.split(',').forEach(function(s){var p=document.createElement('span');p.textContent=s.trim().replace(/^./,function(m){return m.toUpperCase()});c.appendChild(p)});t.replaceWith(c)});
+var els=document.querySelectorAll('h2,.intro,.card,.cap>div,.pipe,.skills>div,.tl>div,.hex,.stats>div');
+els.forEach(function(e,i){e.classList.add('rv');e.style.transitionDelay=(i%3)*90+'ms'});
+var tl=document.querySelector('.tl');
+function count(el){
+ var t=el.textContent,n=parseInt(t,10),s=t.replace(/[0-9]/g,'');
+ if(rm||isNaN(n))return;var st=null;
+ function f(ts){st=st||ts;var p=Math.min((ts-st)/1400,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f)}
+ requestAnimationFrame(f);
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){
+ if(x.isIntersecting){x.target.classList.add('in');
+  var c=x.target.querySelector&&x.target.querySelector('strong');if(c&&!c.dataset.d){c.dataset.d=1;count(c)}
+  io.unobserve(x.target)}})},{threshold:.15});
+els.forEach(function(e){io.observe(e)});if(tl)io.observe(tl);
+setTimeout(function(){els.forEach(function(e){e.classList.add('in')})},4000);
+document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){
+ var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+var bar=document.getElementById('bar');
+addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+'%'},{passive:true});
+var words=['Senior Salesforce Developer','Apex and LWC Engineer','Integration Specialist','DevOps Practitioner'],w=0,ch=0,del=false,ty=document.getElementById('typed');
+if(!rm){ch=words[0].length;del=true;(function tick(){
+ var cur=words[w];ty.textContent=cur.slice(0,ch);
+ if(del){ch--;if(ch<0){del=false;w=(w+1)%words.length;ch=0}setTimeout(tick,35)}
+ else{ch++;if(ch>cur.length){del=true;setTimeout(tick,1800)}else setTimeout(tick,70)}
+})()}
+})();
+</script>
+</body>
+</html>
